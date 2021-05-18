@@ -2,7 +2,7 @@
 function init(patient) {
 
 
-d3.json("../data/samples.json").then(function(jsonData){
+d3.json("samples.json").then(function(jsonData){
   console.log("Initial Array",jsonData);
   var data = jsonData;
   var samples = jsonData.samples;
@@ -101,7 +101,7 @@ init();
 
 function demographic(patient) {
   var infobox = d3.select("#sample-metadata");
-  d3.json("../data/samples.json").then(jsonData => {
+  d3.json("samples.json").then(jsonData => {
     
       var metadata = jsonData.metadata;
       var filtMD = metadata.filter(bac => bac.id == patient)[0];
@@ -121,7 +121,7 @@ function optionChanged(patient) {
 
 function initchange() {
   var dropdown = d3.select("#selDataset");
-      d3.json("../data/samples.json").then(jsonData => {
+      d3.json("samples.json").then(jsonData => {
         var patient = jsonData.names;
           patient.forEach(patient => {
           dropdown.append("option").text(patient).property("value", patient)
