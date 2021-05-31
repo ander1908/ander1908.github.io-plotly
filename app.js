@@ -121,7 +121,7 @@ function optionChanged(patient) {
 
 function initchange() {
   var dropdown = d3.select("#selDataset");
-      d3.json("../../data/samples.json").then(jsonData => {
+      d3.json("samples.json").then(jsonData => {
         var patient = jsonData.names;
           patient.forEach(patient => {
           dropdown.append("option").text(patient).property("value", patient)
